@@ -15,7 +15,7 @@ jobs:
         run: |
           sudo apt-get update && sudo apt-get install jq -y
           THIS_REPO=https://api.github.com/repos/$GITHUB_REPOSITORY/releases/latest
-          TARGET_REPO=https://api.github.com/repos/hurlenko/filebrowser/releases/latest
+          TARGET_REPO=https://api.github.com/repos/hurlenko/filebrowser-docker/releases/latest
           echo ::set-output name=current::"$(curl $THIS_REPO | jq -r '.tag_name')"
           echo ::set-output name=target::"$(curl $TARGET_REPO | jq -r '.tag_name')"
         id: releases
