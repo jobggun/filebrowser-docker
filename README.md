@@ -2,7 +2,7 @@
   <img src="https://raw.githubusercontent.com/filebrowser/logo/master/banner.png" width="550"/>
 </p>
 
-# [filebrowser](https://github.com/filebrowser/filebrowser) inside a [docker container](https://hub.docker.com/r/hurlenko/filebrowser)
+# [filebrowser](https://github.com/filebrowser/filebrowser) inside a [docker container](https://hub.docker.com/r/hurlenko/filebrowser) with tzdata package
 
 [![Latest Github release](https://img.shields.io/github/release/hurlenko/filebrowser-docker.svg)](https://github.com/hurlenko/filebrowser-docker/releases/latest)
 [![Image size](https://img.shields.io/docker/image-size/hurlenko/aria2-ariang/latest)](https://hub.docker.com/r/hurlenko/filebrowser)
@@ -44,6 +44,7 @@ filebrowser provides a file managing interface within a specified directory and 
 - Confgurable via environment variables
 - Can be run using different user
 - Supports multiple architectures, tested on Ubuntu 18.04 (`amd64`), Rock64 🍍 (`arm64`) and Raspberry Pi 🍓 (`arm32`)
+- Supports timezone environment variable
 
 ## Usage
 
@@ -63,6 +64,7 @@ docker run -d \
     -v /DATA_DIR:/data \
     -v /CONFIG_DIR:/config \
     -e FB_BASEURL=/filebrowser \
+    -e TZ=Asia/Seoul
     hurlenko/filebrowser
 ```
 
@@ -84,6 +86,7 @@ services:
       - /CONFIG_DIR:/config
     environment:
       - FB_BASEURL=/filebrowser
+      - TZ=Asia/Seoul
     restart: always
 ```
 
