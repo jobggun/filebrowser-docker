@@ -3,12 +3,12 @@ name: Docker image build
 on:
   workflow_dispatch:
   schedule:
-    - cron:  '30 * * * *'
+    - cron: '30 * * * *'
 
 jobs:
   build_image:
     name: Build docker image
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
       - name: Fetch latest github release
