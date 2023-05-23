@@ -76,3 +76,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ steps.releases.outputs.target }}
           name: Update to ${{ steps.releases.outputs.target }}
+          allow_override: true
